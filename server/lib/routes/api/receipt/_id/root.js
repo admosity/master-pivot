@@ -14,6 +14,12 @@ router.route('/')
 
       return res.ok(receipt);
     });
-  });
+  })
+  .put(function (req, res) {
+    // update line item owners
+    Receipt.findById(req.params.id).exec(function (err, receipt) {
+
+    });
+  })
 
 module.exports = router;
