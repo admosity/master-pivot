@@ -46,7 +46,7 @@ router.route('/')
             continue;
           }
 
-          if(subtotal != null && match = /total.*?(\d+)\s*.\s*(\d+)$/i.exec(l)) {
+          if(subtotal != null && (match = /total.*?(\d+)\s*.\s*(\d+)$/i.exec(l))) {
             total = parseFloat(match[1] + '.' + match[2]);
             break;
           }
