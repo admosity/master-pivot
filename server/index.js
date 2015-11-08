@@ -38,6 +38,7 @@ require('lib/config/environment');
 var development = nconf.get('development');
 
 global.fuckyou = upload;
+global.rootDir = __dirname;
 
 
 http.ServerResponse.prototype.ok = function(data) {
