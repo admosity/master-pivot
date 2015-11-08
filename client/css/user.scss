@@ -5,7 +5,11 @@
 ---------------------------------------------------------
 
   Author: Mike Fortuna
+<<<<<<< HEAD
+  Project: Masterhack
+=======
   Project: Master hack
+>>>>>>> 663bba45d7461028df609414cf324454fb33460e
 
 --------------------------------------------------------- */
 
@@ -48,6 +52,7 @@
 @import "mg-core/modules/table";
 
 //-theme custom styles
+@import "mg-theme/theme/custom/modules/buttons";
 @import "mg-theme/theme/custom/modules/custom";
 
 //-theme responsive

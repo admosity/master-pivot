@@ -17,6 +17,7 @@ module.exports = [
         },
         content: {
           templateUrl: viewsPrefix + 'home.html',
+          controller: "HomeCtrl"
         },
       }
     }
