@@ -1,9 +1,8 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-
-var ReceiptSchema = new Schema({
+var LineItemSchema = new Schema({
   lineItems: { type: Schema.Types.ObjectId, ref: 'LineItem' },
-}, {collection: 'Receipt'});
+}, {collection: 'LineItem'});
 
-mongoose.model('Receipt', ReceiptSchema);
+mongoose.model('LineItem', LineItemSchema);

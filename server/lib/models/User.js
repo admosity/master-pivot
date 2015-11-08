@@ -7,3 +7,4 @@ var UserSchema = new Schema({
 }, {collection: 'User'});
 
 mongoose.model('User', UserSchema);
+  

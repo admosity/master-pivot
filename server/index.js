@@ -15,6 +15,18 @@ var http = require('http');
 var nconf = require('nconf');
 var mongoose = require('mongoose');
 var fs = require('fs');
+var multer = require('multer');
+
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/')
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + '.jpg') //Appending .jpg
+  }
+})
+
+var upload = multer({ storage: storage })
 
 // Define global constants
 require('lib/global');
@@ -23,6 +35,8 @@ require('lib/global');
 require('lib/config/environment');
 
 var development = nconf.get('development');
+
+global.fuckyou = upload;
 
 
 http.ServerResponse.prototype.ok = function(data) {
