@@ -9,6 +9,12 @@
   h2 {
     color:$var-white;
   }
+  h1.huge {
+    font-size:60px;
+  }
+  p {
+    margin-top:15px;
+  }
   ul {
     @extend %list-reset;
     margin:30px auto;
