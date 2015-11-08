@@ -13,14 +13,7 @@ router.post('/login', passport.authenticate('local'), function(req, res) {
 
 router.post('/signup', function (req, res) {
 
-  var firstName = req.body.firstName;
-  var lastName = req.body.lastName;
   var email = req.body.email;
-  var address1 = req.body.address1;
-  var address2 = req.body.address2;
-  var city = req.body.city;
-  var state = req.body.state;
-  var zip = req.body.zip;
   var password = req.body.password;
 
   User.findOne({email: email}, function(err, user) {
@@ -36,14 +29,7 @@ router.post('/signup', function (req, res) {
         bcrypt.hash(password, salt, function(err, hash) {
           if(err) return res.error('d36baf73-3925-4b51-9f3c-5e2230091a1f');
           var newUser = new User({
-            firstName: firstName,
-            lastName: lastName,
             email: email,
-            address1: address1,
-            address2: address2,
-            city: city,
-            state: state,
-            zip: zip,
             password: hash,
           });
 
