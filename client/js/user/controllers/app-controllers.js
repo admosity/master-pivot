@@ -12,9 +12,9 @@ module
 	function($scope) {
 		console.log("Home Controller Start.");
 
-		$scope.payment = {
-			user: 
-		};
+		// $scope.payment = {
+		// 	user:
+		// };
 
 		$scope.pay = function() {
 

@@ -112,8 +112,8 @@ module.exports = function (fileName) {
       console.log('9e68999a-3689-457a-b9be-c2767177f6a6');
       runTesseract(fileName, function (err, result) {
         console.log('b3883723-24e7-4032-8b7d-c3da2451010b');
-        if(err) return reject(err);
-        return resolve(result);
+        if(result) return resolve(result);
+        return reject();
       });
     });
   });

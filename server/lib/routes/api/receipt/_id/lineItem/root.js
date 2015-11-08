@@ -13,7 +13,8 @@ router.route('/')
 
   .get(isLoggedIn, function (req, res) {
     var receiptId = req.params.id;
-    LineItem.find({receipt: receipt, owner: req.user}).lean().exec(function (err, lineItems) {
+    var phoneNumber = req.query.phone;
+    LineItem.find({receipt: receipt, phoneNumber: phoneNumber}).lean().exec(function (err, lineItems) {
       if(err) return res.error(500, '80f41937-0245-4ca6-ae79-4ca3e3b3ee5b');
       return res.ok(lineItems);
     });

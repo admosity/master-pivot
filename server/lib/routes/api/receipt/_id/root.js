@@ -26,7 +26,7 @@ router.route('/')
       async.each(receipt.lineItems, function(lineItem, cb) {
         LineItem.findByIdAndUpdate(lineItem._id, {
           $set: {
-            owner: lineItem.owner
+            phoneNumber: lineItem.phoneNumber,
           }
         }).lean().exec(cb);
       }, function(err) {

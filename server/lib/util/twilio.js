@@ -1,3 +1,4 @@
+var nconf = require('nconf');
 var client = require('twilio')(nconf.get('TWILIO_SID'), nconf.get('TWILIO_SECRET'));
 function sendTwilio(to, from, body){
   //Send an SMS text message
