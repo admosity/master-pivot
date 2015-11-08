@@ -24,94 +24,94 @@ router.route('/')
     fs.writeFile(fileName, file, function (err) {
       if(err) return res.error(500, '2f21b3c8-5dbb-4048-a800-4e23dd1410fa');
 
-      setTimeout(function() {
-        res.ok({
-          _id: "563f6a29061eb70e00db286e",
-          lineItems: [
-            {
-              "_id": "563f6a34061eb70e00db286f",
-              "text": "SAUCE JALAPENO PEPPER HOT",
-              "value": 4.58,
-              "receipt": "563f6a29061eb70e00db286e",
-              "paid": false
-            },
-            {
-              "_id": "563f6a34061eb70e00db2870",
-              "text": "SAUCE JALAPENO PEPPER HOT",
-              "value": 2.29,
-              "receipt": "563f6a29061eb70e00db286e",
-              "paid": false
-            },
-            {
-              "_id": "563f6a34061eb70e00db2871",
-              "text": "SAUCE HABANERO",
-              "value": 2.99,
-              "receipt": "563f6a29061eb70e00db286e",
-              "paid": false
-            },
-            {
-              "_id": "563f6a34061eb70e00db2872",
-              "text": "BEANS REFRIED BLACK BEANS",
-              "value": 0.99,
-              "receipt": "563f6a29061eb70e00db286e",
-              "paid": false
-            },
-            {
-              "_id": "563f6a34061eb70e00db2873",
-              "text": "BEANS REFRIED BLACK BEANS",
-              "value": 0.99,
-              "receipt": "563f6a29061eb70e00db286e",
-              "paid": false
-            },
-            {
-              "_id": "563f6a34061eb70e00db2874",
-              "text": "BEANS REFRIED BLACK BEANS",
-              "value": 0.99,
-              "receipt": "563f6a29061eb70e00db286e",
-              "paid": false
-            },
-            {
-              "_id": "563f6a34061eb70e00db2875",
-              "text": "BEANS REFRIED BLACK BEANS",
-              "value": 0.99,
-              "receipt": "563f6a29061eb70e00db286e",
-              "paid": false
-            },
-            {
-              "_id": "563f6a34061eb70e00db2876",
-              "text": "BEANS REFRIED BLACK BEANS",
-              "value": 0.99,
-              "receipt": "563f6a29061eb70e00db286e",
-              "paid": false
-            },
-            {
-              "_id": "563f6a34061eb70e00db2877",
-              "text": "PEPPERMINT HERBAL TEA-BOX",
-              "value": 1.79,
-              "receipt": "563f6a29061eb70e00db286e",
-              "paid": false
-            },
-            {
-              "_id": "563f6a34061eb70e00db2878",
-              "text": "ORGANIC CHAMOMILE TEA",
-              "value": 2.99,
-              "receipt": "563f6a29061eb70e00db286e",
-              "paid": false
-            },
-            {
-              "_id": "563f6a34061eb70e00db2879",
-              "text": "TEA ORGANIC GINGER PEAR",
-              "value": 2.99,
-              "receipt": "563f6a29061eb70e00db286e",
-              "paid": false
-            }
-          ]
-        });
+      // setTimeout(function() {
+      //   res.ok({
+      //     _id: "563f6a29061eb70e00db286e",
+      //     lineItems: [
+      //       {
+      //         "_id": "563f6a34061eb70e00db286f",
+      //         "text": "SAUCE JALAPENO PEPPER HOT",
+      //         "value": 4.58,
+      //         "receipt": "563f6a29061eb70e00db286e",
+      //         "paid": false
+      //       },
+      //       {
+      //         "_id": "563f6a34061eb70e00db2870",
+      //         "text": "SAUCE JALAPENO PEPPER HOT",
+      //         "value": 2.29,
+      //         "receipt": "563f6a29061eb70e00db286e",
+      //         "paid": false
+      //       },
+      //       {
+      //         "_id": "563f6a34061eb70e00db2871",
+      //         "text": "SAUCE HABANERO",
+      //         "value": 2.99,
+      //         "receipt": "563f6a29061eb70e00db286e",
+      //         "paid": false
+      //       },
+      //       {
+      //         "_id": "563f6a34061eb70e00db2872",
+      //         "text": "BEANS REFRIED BLACK BEANS",
+      //         "value": 0.99,
+      //         "receipt": "563f6a29061eb70e00db286e",
+      //         "paid": false
+      //       },
+      //       {
+      //         "_id": "563f6a34061eb70e00db2873",
+      //         "text": "BEANS REFRIED BLACK BEANS",
+      //         "value": 0.99,
+      //         "receipt": "563f6a29061eb70e00db286e",
+      //         "paid": false
+      //       },
+      //       {
+      //         "_id": "563f6a34061eb70e00db2874",
+      //         "text": "BEANS REFRIED BLACK BEANS",
+      //         "value": 0.99,
+      //         "receipt": "563f6a29061eb70e00db286e",
+      //         "paid": false
+      //       },
+      //       {
+      //         "_id": "563f6a34061eb70e00db2875",
+      //         "text": "BEANS REFRIED BLACK BEANS",
+      //         "value": 0.99,
+      //         "receipt": "563f6a29061eb70e00db286e",
+      //         "paid": false
+      //       },
+      //       {
+      //         "_id": "563f6a34061eb70e00db2876",
+      //         "text": "BEANS REFRIED BLACK BEANS",
+      //         "value": 0.99,
+      //         "receipt": "563f6a29061eb70e00db286e",
+      //         "paid": false
+      //       },
+      //       {
+      //         "_id": "563f6a34061eb70e00db2877",
+      //         "text": "PEPPERMINT HERBAL TEA-BOX",
+      //         "value": 1.79,
+      //         "receipt": "563f6a29061eb70e00db286e",
+      //         "paid": false
+      //       },
+      //       {
+      //         "_id": "563f6a34061eb70e00db2878",
+      //         "text": "ORGANIC CHAMOMILE TEA",
+      //         "value": 2.99,
+      //         "receipt": "563f6a29061eb70e00db286e",
+      //         "paid": false
+      //       },
+      //       {
+      //         "_id": "563f6a34061eb70e00db2879",
+      //         "text": "TEA ORGANIC GINGER PEAR",
+      //         "value": 2.99,
+      //         "receipt": "563f6a29061eb70e00db286e",
+      //         "paid": false
+      //       }
+      //     ]
+      //   });
 
 
-      },2500)
+      // },2500)
 
-      return;
+      // return;
       tesseract(fileName)
       .then(function(result) {
 
