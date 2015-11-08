@@ -12,8 +12,7 @@ var isLoggedIn = require('lib/middleware/isLoggedIn');
 router.route('/')
 
   .get(isLoggedIn, function (req, res) {
-
-    var receipt = req.query.receipt;
+    var receiptId = req.params.id;
     LineItem.find({receipt: receipt, owner: req.user}).lean().exec(function (err, lineItems) {
       if(err) return res.error(500, '80f41937-0245-4ca6-ae79-4ca3e3b3ee5b');
       return res.ok(lineItems);
