@@ -35,7 +35,6 @@ build
 dist
 client/config.codekit
 client/css/.sass-cache
-client/**/*.html
 client/**/*.css
 client/**/*-min.js
 *.sublime-workspace
