@@ -1,3 +1,6 @@
+require('dotenv').load();
+
+
 /**
  * Express requirements
  */
