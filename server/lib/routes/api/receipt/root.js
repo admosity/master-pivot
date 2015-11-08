@@ -7,6 +7,7 @@ var shortid = require('shortid');
 var path = require('path');
 var Receipt = mongoose.model('Receipt');
 
+
 console.log(path.resolve(global.rootDir + '/uploads/' + 'loolo' + '.jpg'));
 
 router.route('/')
@@ -24,16 +25,42 @@ router.route('/')
       tesseract(fileName)
       .then(function(result) {
 
-        if(!result) {
+        var lines = result.split("\n");
+        var subtotal;
+        var total;
+        for (var i = 0; i < lines.length; i++) {
+          var l = lines[i];
 
+          if(!l) {
+            continue;
+          }
+
+          var match;
+
+          if(match = /(\D+)*.*?(\d+)\s*.\s*(\d+)$/i.exec(l)) {
+            newReceipt.lineItems.push(new LineItem({
+              text: match[1],
+              value: parseFloat(match[2] + '.' + match[3]),
+              receipt: newReceipt,
+            }))
+            continue;
+          }
+
+          if(subtotal != null && match = /total.*?(\d+)\s*.\s*(\d+)$/i.exec(l)) {
+            total = parseFloat(match[1] + '.' + match[2]);
+            break;
+          }
+
+          if(match = /subtotal.*?(\d+)\s*.\s*(\d+)$/i.exec(l)) {
+            subtotal = parseFloat(match[1] + '.' + match[2]);
+            continue;
+          }
         }
-        console.log(result);
-        console.log('cc55adcc-b671-46f8-9f5f-d375f1fbd5de');
-        return res.json([
-          { text: "Test Image 1", value: 2.50 },
-          { text: "Test Image 2", value: 12.50 },
-          { text: "Test Image 3", value: 20.50 },
-        ]);
+
+        newReceipt.save(function (err) {
+          if(err) return res.error(500, '5783a631-70b9-4f34-b9a1-40b696717450');
+          return res.ok(newReceipt);
+        });
       })
 
     });
