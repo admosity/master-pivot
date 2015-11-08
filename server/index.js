@@ -71,8 +71,8 @@ app.use('/node_modules', serveStatic(__dirname + (development ? '/../node_module
 
 app.use(cors());
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
+app.use(bodyParser.json({limit: '50mb'}));
 app.use(session({
 	resave: true,
 	saveUninitialized: true,

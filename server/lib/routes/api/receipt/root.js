@@ -5,14 +5,15 @@ var tesseract = require('lib/util/tesseract');
 var fs = require('fs');
 var shortid = require('shortid');
 var path = require('path');
+var Receipt = mongoose.model('Receipt');
 
 console.log(path.resolve(global.rootDir + '/uploads/' + 'loolo' + '.jpg'));
 
 router.route('/')
 
   .post(function (req, res) {
-
-    var file = new Buffer(req.body.image, 'base64');;
+    console.log(req.body.image);
+    var file = new Buffer(req.body.image.toString(), 'base64');;
     var newReceipt = new Receipt({
 
     });
@@ -23,7 +24,7 @@ router.route('/')
       tesseract(fileName)
       .then(function(result) {
 
-        console.log(arguments);
+        console.log(result);
         console.log('cc55adcc-b671-46f8-9f5f-d375f1fbd5de');
         return res.ok();
       })
