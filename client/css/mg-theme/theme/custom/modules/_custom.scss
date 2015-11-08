@@ -1,3 +1,59 @@
 // ==========================================================================
 // Custom Shit here
 // ==========================================================================
+
+.payment {
+  background:rgba(25, 130, 99, 0.47);
+  margin:50px auto;
+  padding:60px;
+  h2 {
+    color:$var-white;
+  }
+  h1.huge {
+    font-size:60px;
+  }
+  p {
+    margin-top:15px;
+  }
+  ul {
+    @extend %list-reset;
+    margin:30px auto 20px 10px;
+  }
+}
+
+form {
+  width: 350px;
+  margin: 0 auto;
+  label {
+    display: none;
+  }
+  .select-control {
+    clear:both;
+    text-align: center;
+    margin:10px auto;
+    float:left;
+    width: 100%;
+    select {
+      background:$var-white;
+      border:none;
+      border-radius:0;
+      height:30px;
+      width:49%;
+    }
+  }
+  .input-control {
+    width:70%;
+    float: left;
+    &.cvc {
+      width:30%;
+    }
+    input {
+      width:100%;
+      display: inline-block;
+      height:50px;
+      padding-left:5px;
+    }
+  }
+
+
+}
