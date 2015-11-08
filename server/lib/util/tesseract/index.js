@@ -7,13 +7,17 @@ var jpeg = require('jpeg-js');
 
 
 function makeBinaryImage(fileName, cb){
+  console.log('WHAT THE FUCK');
   try{
+    console.log('52d3cf4d-205f-4a8f-b578-f0b3e1472a2b');
     var jpegData = fs.readFileSync(fileName);
+    console.log('b753faba-a5a1-4615-bec3-9733743b8d7e');
     var rawImageData = jpeg.decode(jpegData);
     var histogram = [];
     for(var i = 0; i < 256; i++) histogram[i] = 0;
     var count = 0;
     for(var h = 0; h < rawImageData.height; h++){
+      console.log('die');
       for(var w = 0; w < rawImageData.width; w++){
         var avg = 0;
         avg += rawImageData.data[count];
@@ -88,7 +92,7 @@ function makeBinaryImage(fileName, cb){
 
 function runTesseract(fileName, cb){
   var child;
-  var command = "tesseract -l eng " + fileName + " stdout";
+  var command = "tesseract -l eng -psm 4 " + fileName + " stdout";
   console.log("Running command: " + command);
   child = exec(command, function (error, stdout, stderr) {
     console.log('stdout: ' + stdout);
@@ -101,7 +105,7 @@ function runTesseract(fileName, cb){
   });
 }
 
-module.exports = function () {
+module.exports = function (fileName) {
   return new Promise(function(resolve, reject) {
     console.log('f730ce42-802d-4a2d-abe3-9bed48fadeb1');
     makeBinaryImage(fileName, function(){

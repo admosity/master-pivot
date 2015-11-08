@@ -37,6 +37,8 @@ client/config.codekit
 client/css/.sass-cache
 client/**/*.css
 client/**/*-min.js
+uploads/*
+server/uploads/*.jpg
 *.sublime-workspace
 
 *.log
