@@ -42,7 +42,7 @@ var serverErrorHandler = function(err) {
  */
 gulp.task('server-scripts', function() {
   return merge(
-    gulp.src(['server/**/*', 'package.json']).pipe(gulp.dest('dist')),
+    gulp.src(['server/**/*', 'package.json', '.buildpacks']).pipe(gulp.dest('dist')),
     gulp.src(['bin/**/*']).pipe(gulp.dest('dist/bin'))
   );
 });
@@ -53,7 +53,7 @@ gulp.task('server-scripts', function() {
  */
 gulp.task('server-scripts-dev', function() {
   return merge(
-    gulp.src(['server/**/*', 'package.json']).pipe(gulp.dest('build')),
+    gulp.src(['server/**/*', 'package.json', '.buildpacks']).pipe(gulp.dest('build')),
     gulp.src(['bin/**/*']).pipe(gulp.dest('build/bin'))
   );
 });
