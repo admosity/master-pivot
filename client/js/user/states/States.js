@@ -23,4 +23,20 @@ module.exports = [
     }
   },
 
+  {
+    name: 'thanks',
+    state: {
+      url: '/thanks',
+      views: {
+        header: {
+          templateUrl: partialsPrefix + 'header.html',
+        },
+        content: {
+          templateUrl: viewsPrefix + 'thanks.html',
+          controller: "HomeCtrl"
+        },
+      }
+    }
+  }
+
 ];
