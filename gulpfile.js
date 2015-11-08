@@ -120,7 +120,7 @@ var htmlErrorHandler = function(err) {
 
 gulp.task('client-html-dev', function() {
   var injectConfig = require('./config/inject').dev;
-  return gulp.src('client/**/*.jade')
+  var first = gulp.src('client/**/*.jade')
     .pipe(foreach(function (stream, file) {
       var baseFileName = path.basename(file.path);
       var hasInject = injectConfig[baseFileName];
@@ -138,12 +138,17 @@ gulp.task('client-html-dev', function() {
       pretty: true,
     }))
     .pipe(gulp.dest('build/public'));
+
+  var second = gulp.src('client/**/*.html')
+    .pipe(gulp.dest('build/public'));
+
+  return merge(first, second);
 });
 
 gulp.task('client-html', function() {
   var minifyHtml = require('gulp-minify-html');
   var injectConfig = require('./config/inject').dist;
-  return gulp.src('client/**/*.jade')
+  var first = gulp.src('client/**/*.jade')
     .pipe(foreach(function (stream, file) {
       var baseFileName = path.basename(file.path);
       var hasInject = injectConfig[baseFileName];
@@ -169,6 +174,15 @@ gulp.task('client-html', function() {
     }))
     .pipe(gulp.dest('dist/public'));
 
+  var second = gulp.src('client/**/*.html')
+    .pipe(minifyHtml({
+      empty: true,
+      cdata: true,
+      conditionals: true,
+    }))
+    .pipe(gulp.dest('dist/public'));
+
+  return merge(first, second);
 });
 
 /**
