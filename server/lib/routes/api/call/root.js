@@ -21,8 +21,7 @@ router.route('/')
     } else {
 
       sendTwilio('2018926887', '13476521079', [
-        'You got some squaring to do. Pay your part at: ',
-        'https://masterhack-server1.herokuapp.com/'
+        'You are now square with Mike Fortuna'
       ].join(''));
     }
     res.ok();
