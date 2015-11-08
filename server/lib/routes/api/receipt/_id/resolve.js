@@ -19,13 +19,17 @@ router.route('/')
 
     receipt.lineItems.each(function (l) {
       if(receipt.phoneNumber && l.phoneNumber) {
-        sendTwilio(l.phoneNumber, receipt.phoneNumber, [
-          'You got some squaring to do. Pay your part at: ',
-          'https://masterhack-server1.herokuapp.com/receipt/',
-          receipt._id,
-          '?phone=',
-          l.phoneNumber
-        ].join(''));
+        l.phoneNumber.foreach(function (n) {
+
+          sendTwilio(n, receipt.phoneNumber, [
+            'You got some squaring to do. Pay your part at: ',
+            'https://masterhack-server1.herokuapp.com/receipt/',
+            receipt._id,
+            '?phone=',
+            n
+          ].join(''));
+          
+        });
       }
     })
 
