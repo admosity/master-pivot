@@ -43,7 +43,7 @@ router.route('/')
 
           var match;
           console.log('ed3e37ac-f8c3-4a81-bf0c-ce6c7cc19b6f');
-          if(match = /(\d+)\s{0,2}.\s{0,2}(\d{0,2})$/i.exec(l)) {
+          if(match = /(\d+)\s{0,2}?.\s{0,2}?(\d{0,2})$/i.exec(l)) {
             var newLineItem = new LineItem({
               value: parseFloat(match[1] + '.' + match[2]),
               receipt: newReceipt,
