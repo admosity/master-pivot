@@ -23,8 +23,8 @@ router.route('/')
           'You got some squaring to do. Pay your part at: ',
           'https://masterhack-server1.herokuapp.com/receipt/',
           receipt._id,
-          '?owner=',
-          l.owner
+          '?phone=',
+          l.phoneNumber
         ].join(''));
       }
     })
