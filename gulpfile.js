@@ -361,6 +361,13 @@ gulp.task('watch', ['start-database', 'copy-assets-dev', 'client-html-dev', 'cli
     },
     {
       prefix: 'client',
+      ext: '.html',
+      outExt: '.html',
+      suffix: './build/public',
+      tasks: ['client-html-dev']
+    },
+    {
+      prefix: 'client',
       ext: '.scss',
       outExt: '.css',
       suffix: './build/public',
