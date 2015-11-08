@@ -23,6 +23,14 @@
       color: $var-black;
     }
   }
+  &.btn-green {
+    color: $var-white;
+    background: $var-green;
+    &:hover {
+      background: $var-white;
+      color: $var-green;
+    }
+  }
   &.btn-orange {
     &:hover {
       background: $var-white;

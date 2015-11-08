@@ -3,14 +3,14 @@
 // ==========================================================================
 
 //-body
-$body-bg-image:'' ;
+$body-bg-image:'../assets/images/bg.png' ;
 $body-bg-attachment: none ;
-$body-bg-position: 0 0;
+$body-bg-position: center;
 $body-bg-repeat: no-repeat;
 $body-bg-size: cover;
 
 //-logo
-$logo-image: '';
+$logo-image: '../assets/images/logo.png';
 $logo-display: inline-block;
 $logo-bg-attachment: none;
 $logo-bg-position: 0 0;
