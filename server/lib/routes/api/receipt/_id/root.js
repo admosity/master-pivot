@@ -22,6 +22,7 @@ router.route('/')
     // update line item owners
     Receipt.findById(req.params.id).exec(function(err, receipt) {
       if(err) return res.error(500, '7ddfe7f7-e889-4873-8abf-cefaf8d3d17c');
+
       async.each(receipt.lineItems, function(lineItem, cb) {
         LineItem.findByIdAndUpdate(lineItem._id, {
           $set: {
@@ -32,8 +33,10 @@ router.route('/')
         if (err) {
           return res.error(500, 'ebd2f5c0-75e7-458f-bcfb-8237ad600ea9');
         }
-      })
+        return res.ok();
+      });
+
     });
-  })
+  });
 
 module.exports = router;
