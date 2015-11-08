@@ -11,10 +11,13 @@ module
 	"$scope",
 	function($scope) {
 		console.log("Home Controller Start.");
+
 		$scope.payment = {
-			user: {
-				fullName: "Mike Fortuna"
-			}
+			user: 
+		};
+
+		$scope.pay = function() {
+
 		}
 	}
 ])
