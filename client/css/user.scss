@@ -1,0 +1,64 @@
+/**
+
+  @app
+  MG_Framework v 0.8
+---------------------------------------------------------
+
+  Author: Mike Fortuna
+  Project: Masterhack
+
+--------------------------------------------------------- */
+
+//-theme config
+@import "mg-theme/theme/config/var";
+@import "mg-theme/theme/config/colors";
+@import "mg-theme/theme/config/animations";
+@import "mg-theme/theme/config/fonts";
+@import "mg-theme/theme/config/images";
+@import "mg-theme/theme/config/dimensions";
+@import "mg-theme/theme/config/settings";
+
+//-mg-core base
+@import "mg-core/base/helpers";
+@import "mg-core/base/mixins";
+@import "mg-core/base/transitions";
+@import "mg-core/base/reset";
+@import "mg-core/base/print";
+@import "mg-core/base/grid";
+
+//-mg-core elements
+@import "mg-core/elements/body";
+@import "mg-core/elements/header";
+@import "mg-core/elements/nav";
+@import "mg-core/elements/main";
+@import "mg-core/elements/section";
+@import "mg-core/elements/article";
+@import "mg-core/elements/code";
+@import "mg-core/elements/footer";
+
+//-mg-core modules
+@import "mg-core/modules/logo";
+@import "mg-core/modules/buttons";
+@import "mg-core/modules/headings";
+@import "mg-core/modules/hero";
+@import "mg-core/modules/modals";
+@import "mg-core/modules/form";
+@import "mg-core/modules/sidebar";
+@import "mg-core/modules/social";
+@import "mg-core/modules/table";
+
+//-theme custom styles
+@import "mg-theme/theme/custom/modules/buttons";
+@import "mg-theme/theme/custom/modules/hero";
+@import "mg-theme/theme/custom/modules/social";
+
+//-theme xtra modules
+@import "mg-theme/xtras/buy-links";
+@import "mg-theme/xtras/media-wall";
+@import "mg-theme/xtras/tour";
+
+//-theme responsive
+@import "mg-theme/theme/responsive/mobile";
+@import "mg-theme/theme/responsive/tablet";
+@import "mg-theme/theme/responsive/desktop";
+@import "mg-theme/theme/responsive/ie";
