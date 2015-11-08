@@ -16,6 +16,7 @@ var nconf = require('nconf');
 var mongoose = require('mongoose');
 var fs = require('fs');
 var multer = require('multer');
+var cors = require('cors');
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -67,6 +68,7 @@ app.use('/', serveStatic(__dirname + '/public', {'index': ['index.html']}));
 app.use('/node_modules', serveStatic(__dirname + (development ? '/../node_modules' : '/node_modules')));
 // app.use(favicon(__dirname + '/favicon.ico'));
 
+app.use(cors());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
