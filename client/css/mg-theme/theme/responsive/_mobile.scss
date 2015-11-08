@@ -5,6 +5,15 @@
 
 @media #{$mobile} {
 
+  .payment {
+    padding:20px;
+    h2 {
+      font-size:30px;
+      text-align: center;
+    }
+  }
+
+
   @if $mobile-nav == true {
     .nav-toggle {
       display: block;
