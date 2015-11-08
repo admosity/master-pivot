@@ -1,3 +1,16 @@
 // ==========================================================================
 // Custom Shit here
 // ==========================================================================
+
+.payment {
+  background:rgba(25, 130, 99, 0.47);
+  margin:50px auto;
+  padding:60px;
+  h2 {
+    color:$var-white;
+  }
+  ul {
+    @extend %list-reset;
+    margin:30px auto;
+  }
+}
