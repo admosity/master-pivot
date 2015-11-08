@@ -99,14 +99,14 @@ app.use('/', require('lib/routes'));
 // });
 
 // Serve angular index
-var theIndex = fs.readFileSync(__dirname + "/public/index-user.html");
+var theIndex = fs.readFileSync(__dirname + "/public/index.html");
 app.use('*', function(req, res) {
   res.set('Content-Type', 'text/html');
   if(!development) {
 
     return res.send(theIndex);
   } else {
-    fs.readFile(__dirname + "/public/index-user.html", function (err, file) {
+    fs.readFile(__dirname + "/public/index.html", function (err, file) {
       return res.send(file);
     });
   }
