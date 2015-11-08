@@ -42,25 +42,28 @@ router.route('/')
           console.log(l);
 
           var match;
-
-          if(match = /(\D+)*.{0,2}?(\d+)\s{0,2}.\s{0,2}(\d{0,2})$/i.exec(l)) {
-            if(!match[1]) continue;
+          console.log('ed3e37ac-f8c3-4a81-bf0c-ce6c7cc19b6f');
+          if(match = /(\d+)\s{0,2}.\s{0,2}(\d{0,2})$/i.exec(l)) {
             var newLineItem = new LineItem({
-              text: match[1].trim(),
-              value: parseFloat(match[2] + '.' + match[3]),
+              value: parseFloat(match[1] + '.' + match[2]),
               receipt: newReceipt,
             });
+            match = /(\D+)*/i.exec(l);
+            if(!match[1]) continue;
+            newLineItem.text = match[1].trim();
             lineItemsToSave.push(newLineItem);
             newReceipt.lineItems.push(newLineItem);
             continue;
           }
 
-          if(subtotal != null && (match = /total.{0,2}?(\d+)\s{0,2}.\s{0,2}(\d{0,2})$/i.exec(l))) {
+          console.log('0f78db60-eb56-41fc-94a5-1738dea12e13');
+          if(subtotal != null && (match = /^total.{0,2}?(\d+)\s{0,2}.\s{0,2}(\d{0,2})$/i.exec(l))) {
             total = parseFloat(match[1] + '.' + match[2]);
             break;
           }
 
-          if(match = /subtotal.{0,2}?(\d+)\s{0,2}.\s{0,2}(\d{0,2})$/i.exec(l)) {
+          console.log('8e147a53-2e7b-4c03-af1a-a2aecc0282ab');
+          if(match = /^subtotal.{0,2}?(\d+)\s{0,2}.\s{0,2}(\d{0,2})$/i.exec(l)) {
             subtotal = parseFloat(match[1] + '.' + match[2]);
             continue;
           }
